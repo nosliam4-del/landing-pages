@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Inglês Online - Fale com Fluência</title>
+<meta name="description" content="Curso de inglês online focado em conversação real: aulas práticas para sair do básico e começar a falar no dia a dia, no seu ritmo.">
+<meta name="robots" content="noindex">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-861487809"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -23,52 +28,103 @@
     return false;
   }
 </script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aprenda Ingles Rapido - Conversacao Real</title>
-<meta name="robots" content="noindex">
 <style>
-  :root { --bg:#0f1a2e; --card:#15233d; --accent:#38bdf8; --text:#eef6ff; --muted:#a9c3de; }
-  * { box-sizing: border-box; }
-  body {
-    margin:0; font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(160deg,#0f1a2e,#1b3358);
-    color: var(--text); min-height:100vh;
-    display:flex; align-items:center; justify-content:center; padding:24px;
-  }
-  .card {
-    max-width: 480px; width:100%; background: var(--card);
-    border-radius: 16px; padding: 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,.4);
-    border: 1px solid #1f3b63;
-  }
-  h1 { font-size: 1.6rem; line-height:1.3; margin: 0 0 8px; }
-  p.lead { color: var(--muted); margin: 0 0 20px; font-size:1rem; }
-  ul { padding-left: 20px; margin: 0 0 28px; color: #dbeefe; }
-  li { margin-bottom: 10px; line-height:1.4; }
-  .price { font-size: 1.1rem; margin-bottom: 20px; color:#fbbf24; font-weight:600; }
-  a.cta {
-    display:block; text-align:center; text-decoration:none;
-    background: var(--accent); color:#06263f; font-weight:700;
-    padding: 16px; border-radius: 10px; font-size:1.05rem;
-    transition: transform .15s ease;
-  }
-  a.cta:hover { transform: translateY(-2px); }
-  .footer-note { margin-top:16px; font-size:.78rem; color:#7ea3c7; text-align:center; }
+:root {
+      --bg1:#0b1220; --bg2:#132943; --card:#15203a; --accent:#38bdf8;
+      --text:#eff6ff; --muted:#a8c4e0; --accent-text:#06243a; --soft:#1e3a5f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0; font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+      background:linear-gradient(160deg,var(--bg1),var(--bg2));
+      color:var(--text); min-height:100vh; padding:24px 16px 48px;
+      line-height:1.55; -webkit-font-smoothing:antialiased;
+    }
+    .wrap { max-width:620px; margin:0 auto; }
+    .card {
+      background:var(--card); border-radius:18px; padding:30px 26px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35); border:1px solid var(--soft);
+    }
+    h1 { font-size:1.65rem; line-height:1.25; margin:0 0 10px; letter-spacing:-.01em; }
+    p.lead { color:var(--muted); margin:0 0 22px; font-size:1.04rem; }
+    h2 {
+      font-size:1.08rem; margin:28px 0 12px; padding-bottom:8px;
+      border-bottom:1px solid var(--soft); letter-spacing:.01em;
+    }
+    ul { padding-left:20px; margin:0 0 6px; }
+    li { margin-bottom:9px; }
+    .faq-q { font-weight:600; margin:16px 0 4px; }
+    .faq-a { color:var(--muted); margin:0; font-size:.95rem; }
+    .price {
+      font-size:1.12rem; margin:26px 0 16px; color:var(--accent);
+      font-weight:700; text-align:center;
+    }
+    a.cta {
+      display:block; text-align:center; text-decoration:none;
+      background:var(--accent); color:var(--accent-text); font-weight:700;
+      padding:17px 16px; border-radius:11px; font-size:1.06rem;
+      transition:transform .15s ease, filter .15s ease; margin:6px 0;
+    }
+    a.cta:hover { transform:translateY(-2px); filter:brightness(1.07); }
+    .note { margin-top:14px; font-size:.82rem; color:var(--muted); text-align:center; }
+    .disclosure {
+      margin-top:22px; font-size:.75rem; color:var(--muted);
+      text-align:center; line-height:1.5; opacity:.85;
+    }
+    @media (max-width:480px) {
+      body { padding:16px 12px 40px; }
+      .card { padding:24px 20px; }
+      h1 { font-size:1.42rem; }
+    }
 </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Pare de Estudar Ingles e Comece a Falar</h1>
-    <p class="lead">Metodo focado em conversacao real, para quem quer parar de so entender e comecar a falar ingles no dia a dia.</p>
-    <ul>
-      <li>Aulas praticas focadas em conversacao real</li>
-      <li>Acesso imediato pelo celular ou computador</li>
-      <li>1 ano de acesso completo ao curso</li>
-    </ul>
-    <div class="price">Acesso completo por tempo limitado</div>
-    <a class="cta" href="https://pay.kiwify.com.br/ZeANidO?afid=dM05NhBo" rel="nofollow" onclick="return gtag_report_conversion(this.href);">Quero falar ingles agora</a>
-    <div class="footer-note">Compra processada com seguranca pela Kiwify.</div>
+  <div class="wrap">
+    <main class="card">
+      <h1>Pare de Estudar Inglês e Comece a Falar</h1>
+      <p class="lead">Curso online focado em conversação real, para quem já entende um pouco mas trava na hora de falar e quer destravar de vez.</p>
+
+      <a class="cta" href="https://pay.kiwify.com.br/ZeANidO?afid=dM05NhBo" rel="nofollow sponsored" onclick="return gtag_report_conversion(this.href);">Quero falar inglês</a>
+
+      <section>
+        <h2>O que você recebe</h2>
+        <ul>
+        <li>Aulas práticas de conversação, com situações reais do dia a dia</li>
+        <li>Trilha do básico ao intermediário, para acompanhar na ordem certa</li>
+        <li>Vocabulário aplicado a viagens, trabalho e conversas informais</li>
+        <li>Treino de pronúncia e de compreensão auditiva</li>
+        <li>Acesso pelo celular ou computador, para estudar quando der</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Para quem é indicado</h2>
+        <ul>
+        <li>Quem já fez curso antes mas continua travando na hora de falar</li>
+        <li>Quem precisa do inglês para trabalho, viagem ou estudo</li>
+        <li>Quem quer aprender no próprio ritmo, sem horário fixo de aula</li>
+        <li>Quem está começando e quer uma trilha clara para seguir</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Perguntas frequentes</h2>
+      <p class="faq-q">Serve mesmo sendo iniciante?</p>
+      <p class="faq-a">Sim. A trilha começa do básico e avança de forma gradual.</p>
+      <p class="faq-q">As aulas são ao vivo?</p>
+      <p class="faq-a">As aulas são gravadas, o que permite assistir e revisar quando quiser.</p>
+      <p class="faq-q">Quanto tempo de acesso?</p>
+      <p class="faq-a">O acesso fica disponível na plataforma pelo período informado na compra.</p>
+      <p class="faq-q">Preciso estudar todo dia?</p>
+      <p class="faq-a">A constância ajuda, mas você define o ritmo conforme sua rotina.</p>
+      </section>
+
+      <div class="price">Acesso completo por tempo limitado</div>
+      <a class="cta" href="https://pay.kiwify.com.br/ZeANidO?afid=dM05NhBo" rel="nofollow sponsored" onclick="return gtag_report_conversion(this.href);">Quero falar inglês</a>
+      <p class="note">Acesso liberado na plataforma logo após a confirmação do pagamento.</p>
+    </main>
+    <p class="disclosure">Esta página contém link de afiliado. Ao comprar por aqui, você paga o mesmo valor
+    e podemos receber uma comissão pela indicação. Pagamento processado com segurança pela Kiwify.</p>
   </div>
 </body>
 </html>

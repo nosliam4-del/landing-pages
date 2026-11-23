@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Pintura Residencial - Aprenda do Zero</title>
+<meta name="description" content="Curso de pintura residencial em videoaulas: do básico ao acabamento profissional, com certificado e acesso vitalício, para trabalhar como pintor.">
+<meta name="robots" content="noindex">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-861487809"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -23,52 +28,103 @@
     return false;
   }
 </script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curso de Pintura Residencial - Renda Extra</title>
-<meta name="robots" content="noindex">
 <style>
-  :root { --bg:#13181f; --card:#1d242e; --accent:#60a5fa; --text:#eef3fb; --muted:#aab9cc; }
-  * { box-sizing: border-box; }
-  body {
-    margin:0; font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(160deg,#13181f,#232f3f);
-    color: var(--text); min-height:100vh;
-    display:flex; align-items:center; justify-content:center; padding:24px;
-  }
-  .card {
-    max-width: 480px; width:100%; background: var(--card);
-    border-radius: 16px; padding: 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,.4);
-    border: 1px solid #2d3a4a;
-  }
-  h1 { font-size: 1.6rem; line-height:1.3; margin: 0 0 8px; }
-  p.lead { color: var(--muted); margin: 0 0 20px; font-size:1rem; }
-  ul { padding-left: 20px; margin: 0 0 28px; color: #dce7f5; }
-  li { margin-bottom: 10px; line-height:1.4; }
-  .price { font-size: 1.1rem; margin-bottom: 20px; color:#fbbf24; font-weight:600; }
-  a.cta {
-    display:block; text-align:center; text-decoration:none;
-    background: var(--accent); color:#0a1a2e; font-weight:700;
-    padding: 16px; border-radius: 10px; font-size:1.05rem;
-    transition: transform .15s ease;
-  }
-  a.cta:hover { transform: translateY(-2px); }
-  .footer-note { margin-top:16px; font-size:.78rem; color:#7c93ad; text-align:center; }
+:root {
+      --bg1:#0c1a12; --bg2:#13331f; --card:#13261a; --accent:#34d399;
+      --text:#ecfdf5; --muted:#a7d9bf; --accent-text:#042f1d; --soft:#1d4531;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0; font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+      background:linear-gradient(160deg,var(--bg1),var(--bg2));
+      color:var(--text); min-height:100vh; padding:24px 16px 48px;
+      line-height:1.55; -webkit-font-smoothing:antialiased;
+    }
+    .wrap { max-width:620px; margin:0 auto; }
+    .card {
+      background:var(--card); border-radius:18px; padding:30px 26px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35); border:1px solid var(--soft);
+    }
+    h1 { font-size:1.65rem; line-height:1.25; margin:0 0 10px; letter-spacing:-.01em; }
+    p.lead { color:var(--muted); margin:0 0 22px; font-size:1.04rem; }
+    h2 {
+      font-size:1.08rem; margin:28px 0 12px; padding-bottom:8px;
+      border-bottom:1px solid var(--soft); letter-spacing:.01em;
+    }
+    ul { padding-left:20px; margin:0 0 6px; }
+    li { margin-bottom:9px; }
+    .faq-q { font-weight:600; margin:16px 0 4px; }
+    .faq-a { color:var(--muted); margin:0; font-size:.95rem; }
+    .price {
+      font-size:1.12rem; margin:26px 0 16px; color:var(--accent);
+      font-weight:700; text-align:center;
+    }
+    a.cta {
+      display:block; text-align:center; text-decoration:none;
+      background:var(--accent); color:var(--accent-text); font-weight:700;
+      padding:17px 16px; border-radius:11px; font-size:1.06rem;
+      transition:transform .15s ease, filter .15s ease; margin:6px 0;
+    }
+    a.cta:hover { transform:translateY(-2px); filter:brightness(1.07); }
+    .note { margin-top:14px; font-size:.82rem; color:var(--muted); text-align:center; }
+    .disclosure {
+      margin-top:22px; font-size:.75rem; color:var(--muted);
+      text-align:center; line-height:1.5; opacity:.85;
+    }
+    @media (max-width:480px) {
+      body { padding:16px 12px 40px; }
+      .card { padding:24px 20px; }
+      h1 { font-size:1.42rem; }
+    }
 </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Aprenda Pintura Residencial do Zero</h1>
-    <p class="lead">Curso completo passo a passo, do basico ao avancado, com certificado e acesso vitalicio, para quem quer trabalhar por conta propria ou fazer bico de pintor.</p>
-    <ul>
-      <li>Tecnicas profissionais explicadas em video</li>
-      <li>Certificado de conclusao incluso</li>
-      <li>Acesso vitalicio pelo celular ou computador</li>
-    </ul>
-    <div class="price">Acesso completo por tempo limitado</div>
-    <a class="cta" href="https://pay.kiwify.com.br/az01MfO?afid=kN4UKr2g" rel="nofollow" onclick="return gtag_report_conversion(this.href);">Quero aprender agora</a>
-    <div class="footer-note">Compra processada com seguranca pela Kiwify.</div>
+  <div class="wrap">
+    <main class="card">
+      <h1>Curso de Pintura Residencial do Básico ao Avançado</h1>
+      <p class="lead">Aprenda pintura residencial em videoaulas passo a passo, com técnicas de acabamento profissional, para trabalhar por conta própria ou aumentar sua renda.</p>
+
+      <a class="cta" href="https://pay.kiwify.com.br/az01MfO?afid=kN4UKr2g" rel="nofollow sponsored" onclick="return gtag_report_conversion(this.href);">Quero aprender pintura</a>
+
+      <section>
+        <h2>O que você recebe</h2>
+        <ul>
+        <li>Videoaulas do básico ao avançado, para assistir no seu ritmo</li>
+        <li>Preparação de parede: massa corrida, lixamento e correção de imperfeições</li>
+        <li>Técnicas de pintura interna e externa, com acabamento profissional</li>
+        <li>Módulo de textura e grafiato para diferenciar seu trabalho</li>
+        <li>Certificado de conclusão e acesso vitalício pelo celular ou computador</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Para quem é indicado</h2>
+        <ul>
+        <li>Quem quer aprender uma profissão prática e com demanda constante</li>
+        <li>Quem já faz bicos de pintura e quer melhorar o acabamento e cobrar mais</li>
+        <li>Quem busca uma fonte de renda para trabalhar por conta própria</li>
+        <li>Quem quer pintar a própria casa com resultado profissional</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Perguntas frequentes</h2>
+      <p class="faq-q">Preciso de experiência?</p>
+      <p class="faq-a">Não. O curso começa do zero, explicando ferramentas, materiais e técnicas básicas.</p>
+      <p class="faq-q">Tem certificado?</p>
+      <p class="faq-a">Sim. O certificado de conclusão é emitido ao final do curso.</p>
+      <p class="faq-q">Por quanto tempo tenho acesso?</p>
+      <p class="faq-a">O acesso é vitalício, para rever as aulas sempre que precisar.</p>
+      <p class="faq-q">Consigo assistir pelo celular?</p>
+      <p class="faq-a">Sim. As aulas podem ser assistidas pelo celular ou computador.</p>
+      </section>
+
+      <div class="price">Acesso completo por tempo limitado</div>
+      <a class="cta" href="https://pay.kiwify.com.br/az01MfO?afid=kN4UKr2g" rel="nofollow sponsored" onclick="return gtag_report_conversion(this.href);">Quero aprender pintura</a>
+      <p class="note">Acesso liberado na plataforma logo após a confirmação do pagamento.</p>
+    </main>
+    <p class="disclosure">Esta página contém link de afiliado. Ao comprar por aqui, você paga o mesmo valor
+    e podemos receber uma comissão pela indicação. Pagamento processado com segurança pela Kiwify.</p>
   </div>
 </body>
 </html>

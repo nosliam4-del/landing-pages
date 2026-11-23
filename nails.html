@@ -1,4 +1,27 @@
 <html lang="pt-BR"><head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-861487809"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-861487809');
+
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-861487809/cj40CJzvyL0dEMGF5ZoD',
+        'value': 1.0,
+        'currency': 'BRL',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nail Designer Profissional - Curso Completo</title>
@@ -42,7 +65,7 @@
       <li>Acesso imediato apos a confirmacao</li>
     </ul>
     <div class="price">Acesso completo por tempo limitado</div>
-    <a class="cta" href="https://pay.kiwify.com.br/S583xdc?afid=CFBf69po" rel="nofollow">Quero me inscrever agora</a>
+    <a class="cta" href="https://pay.kiwify.com.br/S583xdc?afid=CFBf69po" rel="nofollow" onclick="return gtag_report_conversion(this.href);">Quero me inscrever agora</a>
     <div class="footer-note">Compra processada com seguranca pela Kiwify.</div>
   </div>
 

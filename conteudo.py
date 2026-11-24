@@ -28,7 +28,6 @@ PAGINAS["resumos-concursos"] = {
         ("Atualização", "mensal, com nota dizendo o que mudou desde a edição anterior"),
         ("Bônus", "quatro cadernos liberados junto com o acesso"),
         ("Garantia", "7 dias"),
-        ("Pagamento", "cartão, Pix ou boleto"),
     ],
     "sections": [
         ("O que está incluso", [
@@ -64,7 +63,7 @@ PAGINAS["resumos-concursos"] = {
          "Em PDF, para ler no celular, no computador ou imprimir."),
         ("E se eu não gostar?", "A compra tem garantia de 7 dias."),
     ],
-    "closing": "Pagamento com cartão, Pix ou boleto. Acesso liberado após a confirmação.",
+    "closing": "Acesso liberado após a confirmação do pagamento. Garantia de 7 dias.",
 }
 
 # ------------------------------------------------------------- automaquiagem
@@ -114,7 +113,7 @@ PAGINAS["automaquiagem"] = {
         ("Posso comprar para presentear?",
          "Sim. Basta informar na inscrição o e-mail de quem vai receber."),
     ],
-    "closing": "Valores e condições são informados na página de pagamento.",
+    "closing": "R$ 147,00 à vista ou parcelado no cartão. Acesso enviado por e-mail após a confirmação.",
 }
 
 # ----------------------------------------------------------- organizar a casa
@@ -159,7 +158,7 @@ PAGINAS["organizacao-casa"] = {
         ("Em que formato recebo?",
          "Em formato digital, para ler no celular ou no computador."),
     ],
-    "closing": "Valores e condições são informados na página de pagamento.",
+    "closing": "R$ 29,90, no Pix ou no cartão. Garantia de 30 dias.",
 }
 
 # ------------------------------------------------------------------ inglês
@@ -204,7 +203,7 @@ PAGINAS["ingles-fluencia"] = {
          "A proposta é começar do básico e avançar com prática de conversação."),
         ("E se eu não gostar?", "A compra tem garantia de 7 dias."),
     ],
-    "closing": "Valores e condições são informados na página de pagamento.",
+    "closing": "R$ 997,00 à vista ou até 12x de R$ 103,11 no cartão. Garantia de 7 dias.",
 }
 
 # ------------------------------------------------------------- caderno TRT
@@ -389,8 +388,9 @@ PAGINAS["pintura-residencial"] = {
          "Sim. As aulas podem ser assistidas pelo celular ou pelo computador."),
         ("Como recebo o acesso?",
          "O acesso é liberado após a confirmação do pagamento."),
-        ("Onde vejo as condições de acesso?",
-         "As condições, prazos e valores são informados na página de pagamento."),
+        ("Quanto custa?",
+         "R$ 129,90 à vista, no Pix ou no cartão. Parcelado, são até 12x de "
+         "R$ 13,44 no cartão, com acréscimo."),
     ],
     "closing": "Acesso liberado após a confirmação do pagamento.",
 }
@@ -614,7 +614,7 @@ PAGINAS["slim30"] = {
     "faq": [
         ("Como funciona a cobrança?",
          "É uma assinatura: R$ 49,00 por mês, renovada automaticamente até você cancelar. "
-         "O valor e as condições são definidos pelo produtor na página de pagamento."),
+         "Não é uma compra única."),
         ("Preciso de academia?",
          "Não. Os exercícios foram pensados para serem feitos em casa, sem equipamentos."),
         ("Em quanto tempo recebo o acesso?",
@@ -626,5 +626,93 @@ PAGINAS["slim30"] = {
              "São R$ 49,00 por mês, renovados automaticamente até o cancelamento. "
              "Antes de iniciar qualquer plano alimentar ou de exercícios, consulte um "
              "profissional de saúde."),
-    "closing": "Assinatura mensal de R$ 49,00. Condições na página de pagamento.",
+    "closing": "Assinatura de R$ 49,00 por mês, renovada até o cancelamento.",
+}
+
+
+# ---------------------------------------------------------------- privacidade
+# Mesmo texto conferido antes; o que muda aqui e so o formato. Esta pagina
+# nao carrega a tag do Google Ads: uma pagina que explica rastreamento nao
+# deveria rastrear quem vem ler.
+PRIVACIDADE = {
+    "titulo": "Política de Privacidade",
+    "desc": "Quais dados são coletados nestas páginas, para que servem e como "
+            "exercer seus direitos previstos na LGPD.",
+    "atualizado": "Última atualização: 23 de novembro de 2026",
+    "abertura": "Esta política explica quais informações são coletadas quando você "
+                "visita estas páginas, para que elas são usadas e quais são os seus "
+                "direitos, conforme a Lei Geral de Proteção de Dados "
+                "(Lei nº 13.709/2018 — LGPD).",
+    "secoes": [
+        ("Quem somos", [
+            "Estas páginas são mantidas por um divulgador independente de produtos "
+            "digitais (afiliado). Não somos os produtores dos materiais divulgados "
+            "nem a plataforma que processa os pagamentos.",
+            'Para qualquer questão sobre privacidade ou sobre seus dados, o contato é '
+            '<a href="mailto:nosliam4@gmail.com">nosliam4@gmail.com</a>.',
+        ]),
+        ("Quais dados são coletados", [
+            "Estas páginas <strong>não possuem formulários</strong> e não pedem seu "
+            "nome, e-mail, telefone ou qualquer dado de cadastro. O que é coletado é "
+            "apenas informação técnica de navegação, de forma automática:",
+            ["Endereço IP e localização aproximada (cidade ou região)",
+             "Tipo de dispositivo, navegador e sistema operacional",
+             "Páginas visitadas, tempo de permanência e cliques nos botões",
+             "De qual anúncio ou site você chegou até aqui"],
+        ]),
+        ("Cookies e rastreamento", [
+            "As páginas de produto usam a tag de conversão do <strong>Google Ads</strong>, "
+            "que grava cookies no seu navegador. A finalidade é exclusivamente medir o "
+            "desempenho dos anúncios — por exemplo, saber quantas pessoas clicaram no "
+            "botão de compra depois de ver um anúncio.",
+            "Esta página de política, especificamente, não carrega essa tag.",
+            'Esses dados são tratados pelo Google conforme a '
+            '<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">'
+            'Política de Privacidade do Google</a>. Você pode desativar a personalização '
+            'de anúncios nas <a href="https://adssettings.google.com" target="_blank" '
+            'rel="noopener">Configurações de Anúncios do Google</a> ou bloquear cookies '
+            'nas configurações do seu navegador. Bloquear cookies não impede o uso '
+            'destas páginas.',
+        ]),
+        ("Base legal e finalidade", [
+            "O tratamento desses dados se apoia no <strong>legítimo interesse</strong> "
+            "(art. 7º, IX da LGPD), com a finalidade de medir e melhorar a eficiência da "
+            "divulgação. Os dados não são usados para identificar você pessoalmente.",
+        ]),
+        ("Compartilhamento", [
+            "Não vendemos nem cedemos dados a terceiros. As informações de navegação são "
+            "processadas pelo Google, na qualidade de operador, conforme descrito acima.",
+            "Ao clicar em um botão de compra, você é levado para a plataforma de pagamento "
+            "<strong>Kiwify</strong>, que passa a ser a responsável pelos dados que você "
+            "fornecer lá (nome, e-mail, dados de pagamento). Essa etapa é regida pela "
+            "política de privacidade da própria plataforma, e não por esta.",
+        ]),
+        ("Links de afiliado", [
+            "Os botões de compra destas páginas contêm links de afiliado. Isso significa "
+            "que podemos receber uma comissão caso você efetue a compra. "
+            "<strong>O preço que você paga é exatamente o mesmo</strong>, com ou sem o link.",
+        ]),
+        ("Retenção", [
+            "Os dados de navegação ficam retidos pelo período definido nas ferramentas do "
+            "Google (atualmente, até 90 dias para dados de conversão de anúncios), após o "
+            "que são automaticamente descartados ou agregados.",
+        ]),
+        ("Seus direitos", [
+            "A LGPD garante a você o direito de confirmar a existência de tratamento, "
+            "acessar seus dados, corrigir dados incompletos ou desatualizados, solicitar "
+            "anonimização ou eliminação, revogar o consentimento e se opor a tratamentos "
+            "feitos com base no legítimo interesse.",
+            'Para exercer qualquer um desses direitos, escreva para '
+            '<a href="mailto:nosliam4@gmail.com">nosliam4@gmail.com</a>. '
+            'Responderemos no prazo legal.',
+        ]),
+        ("Menores de idade", [
+            "Estas páginas não se destinam a menores de 18 anos e não coletam "
+            "intencionalmente dados de crianças ou adolescentes.",
+        ]),
+        ("Alterações nesta política", [
+            "Esta política pode ser atualizada a qualquer momento. A data da última "
+            "revisão está indicada no topo desta página.",
+        ]),
+    ],
 }

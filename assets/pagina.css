@@ -119,6 +119,22 @@ a:focus-visible {
   color: var(--ink);
 }
 
+/* O preço é a primeira linha e a informação que a pessoa veio buscar. */
+.spec div:first-child dd {
+  font-size: 1.06rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.spec-note {
+  margin: 0.8rem 0 0;
+  padding-left: 1.3rem;
+  font-family: var(--sans);
+  font-size: 0.79rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
 /* ---------- blocos de texto ---------- */
 
 section { margin-top: 2.9rem; }
@@ -228,6 +244,63 @@ footer {
 }
 
 footer a { color: var(--ink-2); }
+
+/* ---------- páginas de texto: política e índice ---------- */
+
+.updated {
+  margin: 0 0 2.4rem;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  color: var(--ink-2);
+}
+
+.doc .abertura {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.58;
+  color: var(--ink-2);
+}
+
+.doc section p { margin: 0 0 0.95rem; }
+.doc section p:last-child { margin-bottom: 0; }
+.doc section ul { margin: 0 0 0.95rem; }
+.doc section a { color: var(--accent); text-underline-offset: 2px; }
+.doc section strong { font-weight: 600; }
+
+/* Índice: nome do produto e valor de capa, gerados do mesmo conteúdo. */
+.cat {
+  margin: 0;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+}
+
+.cat a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 1.2rem;
+  align-items: baseline;
+  padding: 0.88rem 0.2rem;
+  border-bottom: 1px solid var(--rule-2);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.cat a:hover,
+.cat a:focus-visible { background: var(--rule-2); }
+
+.cat b { font-weight: 500; font-size: 0.97rem; }
+
+.cat span {
+  color: var(--ink-2);
+  font-size: 0.87rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .cat a { grid-template-columns: 1fr; gap: 0.15rem; }
+  .cat span { white-space: normal; }
+}
 
 /* ---------- barra fixa no celular ---------- */
 

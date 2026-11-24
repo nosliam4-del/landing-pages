@@ -1,0 +1,267 @@
+/* Ficha de produto — design system das páginas de afiliado.
+   Uma coluna, texto em serifa, tabela de especificação como elemento central. */
+
+:root {
+  --paper:   #fcfbf9;
+  --ink:     #15181c;
+  --ink-2:   #585f68;
+  --ink-3:   #8a9099;
+  --rule:    #e6e2db;
+  --rule-2:  #f0ede7;
+  --accent:  #1f4e8c;
+  --on-accent: #ffffff;
+  --measure: 36rem;
+  --serif: Newsreader, Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.sheet {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 7.5rem;
+}
+
+/* ---------- abertura ---------- */
+
+h1 {
+  font-weight: 500;
+  font-size: 2.3rem;
+  line-height: 1.14;
+  letter-spacing: -0.016em;
+  margin: 0 0 0.9rem;
+  text-wrap: balance;
+}
+
+.lead {
+  margin: 0 0 1.9rem;
+  font-size: 1.14rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* ---------- chamada ---------- */
+
+.go {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.97rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  color: var(--on-accent);
+  background: var(--accent);
+  padding: 0.95rem 1.7rem;
+  border-radius: 3px;
+  transition: filter 0.12s ease;
+}
+
+.go:hover { filter: brightness(1.12); }
+.go:active { filter: brightness(0.94); }
+
+.go:focus-visible,
+summary:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.under-go {
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0.85rem 0 0;
+}
+
+/* ---------- ficha técnica ---------- */
+
+.spec {
+  margin: 2.6rem 0 0;
+  padding: 0.3rem 0 0.3rem 1.3rem;
+  border-left: 2px solid var(--accent);
+  font-family: var(--sans);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.spec div {
+  display: grid;
+  grid-template-columns: 8.2rem 1fr;
+  gap: 0 1rem;
+  padding: 0.52rem 0;
+  border-bottom: 1px solid var(--rule-2);
+}
+
+.spec div:last-child { border-bottom: 0; }
+
+.spec dt {
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.spec dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ---------- blocos de texto ---------- */
+
+section { margin-top: 2.9rem; }
+
+h2 {
+  font-weight: 500;
+  font-size: 1.22rem;
+  letter-spacing: -0.008em;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin-bottom: 0.72rem;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+/* ---------- perguntas ---------- */
+
+details {
+  border-bottom: 1px solid var(--rule-2);
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.82rem 1.9rem 0.82rem 0;
+  position: relative;
+  font-size: 1.02rem;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+  content: "";
+  position: absolute;
+  right: 0.35rem;
+  top: 1.38rem;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--ink-3);
+  border-bottom: 1.5px solid var(--ink-3);
+  transform: rotate(45deg);
+  transition: transform 0.18s ease;
+}
+
+details[open] summary::after { transform: rotate(-135deg); }
+
+details p {
+  margin: -0.25rem 0 1rem;
+  color: var(--ink-2);
+  font-size: 1rem;
+}
+
+/* ---------- aviso destacado (assinatura, saúde) ---------- */
+
+.flag {
+  margin: 2.6rem 0 0;
+  padding: 1rem 1.15rem;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.89rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.flag strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+/* ---------- fecho ---------- */
+
+.close { margin-top: 3.1rem; }
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+footer a { color: var(--ink-2); }
+
+/* ---------- barra fixa no celular ---------- */
+
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+  background: rgba(252, 251, 249, 0.94);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--rule);
+  z-index: 10;
+}
+
+.bar .go {
+  display: block;
+  text-align: center;
+  padding: 0.92rem 1rem;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16.5px; }
+  .sheet { padding: 2.6rem 1.25rem 6rem; }
+  h1 { font-size: 1.95rem; }
+  .lead { font-size: 1.08rem; }
+  .spec div { grid-template-columns: 1fr; gap: 0.1rem; padding: 0.6rem 0; }
+  .spec dt { font-size: 0.84rem; }
+  .go { display: block; text-align: center; }
+  .bar { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

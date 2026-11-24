@@ -6,6 +6,7 @@ Regra do projeto: so entra aqui o que foi conferido na pagina de pagamento ou
 na pagina de vendas do produtor. Nada de afirmacao inventada.
 """
 
+import hashlib
 import io
 import os
 
@@ -29,7 +30,7 @@ TPL = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
-<link rel="stylesheet" href="assets/pagina.css">
+<link rel="stylesheet" href="assets/pagina.css?v={cssv}">
 <style>:root{{--accent:{accent};}}</style>
 <script async src="https://www.googletagmanager.com/gtag/js?id={gtag_id}"></script>
 <script>
@@ -108,6 +109,15 @@ def esc_attr(s):
     return s.replace('"', "&quot;")
 
 
+def css_version():
+    """Hash do CSS, para o navegador nao servir uma versao em cache."""
+    css = io.open("assets/pagina.css", "rb").read()
+    return hashlib.md5(css).hexdigest()[:8]
+
+
+CSSV = None
+
+
 def render(slug, p):
     spec = "\n".join(
         '    <div><dt>{}</dt><dd>{}</dd></div>'.format(k, v) for k, v in p["spec"]
@@ -147,6 +157,7 @@ def render(slug, p):
         sections=sections,
         faq=faq,
         closing=p["closing"],
+        cssv=CSSV,
     )
     io.open(slug + ".html", "w", encoding="utf-8").write(html)
     return len(html)
@@ -156,6 +167,8 @@ if __name__ == "__main__":
     from conteudo import PAGINAS
 
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    globals()["CSSV"] = css_version()
+    print("css v{}\n".format(CSSV))
     total = 0
     for slug, p in PAGINAS.items():
         n = render(slug, p)

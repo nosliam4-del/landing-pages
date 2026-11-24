@@ -17,8 +17,8 @@ PAGINAS["resumos-concursos"] = {
             "e acesso vitalício.",
     "h1": "Resumos esquematizados para concursos públicos",
     "lead": "Todas as matérias do combo em um único acesso, com texto direto, tópicos "
-            "curtos e revisão de véspera, para quem precisa que cada hora de estudo "
-            "renda mais.",
+            "curtos e revisão de véspera, para quem precisa aproveitar melhor cada "
+            "hora de estudo.",
     "link": "https://pay.kiwify.com.br/8nM2K24?afid=qRunDdxv",
     "cta": "Ver o combo",
     "undergo": "Acesso vitalício, com garantia de 7 dias.",
@@ -311,7 +311,7 @@ PAGINAS["nails"] = {
             "certificados inclusos, pagamento único e acesso enviado por e-mail.",
     "h1": "Aprenda alongamento de unhas e nail design",
     "lead": "Curso completo em videoaulas para quem quer dominar alongamento de unhas, "
-            "atender com segurança e transformar isso em uma fonte de renda.",
+            "atender com segurança e trabalhar por conta própria.",
     "link": "https://pay.kiwify.com.br/S583xdc?afid=CFBf69po",
     "cta": "Ver o curso",
     "undergo": "Pagamento único, sem mensalidades.",
@@ -377,7 +377,7 @@ PAGINAS["pintura-residencial"] = {
         ("Para quem é indicado", [
             "Quem quer aprender uma profissão prática e com demanda constante",
             "Quem já faz bicos de pintura e quer melhorar o acabamento",
-            "Quem busca uma fonte de renda para trabalhar por conta própria",
+            "Quem quer aprender um ofício para trabalhar por conta própria",
             "Quem quer pintar a própria casa com um resultado melhor",
         ]),
     ],

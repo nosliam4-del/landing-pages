@@ -84,9 +84,21 @@ TPL = """<!DOCTYPE html>
   </footer>
 </div>
 
-<div class="bar">
+<div class="bar" id="bar">
   <a class="go" href="{link}" rel="nofollow sponsored" onclick="return gtag_report_conversion(this.href);">{cta}</a>
 </div>
+
+<script>
+  // A barra fixa so aparece depois que o botao do topo sai da tela.
+  (function () {{
+    var alvo = document.querySelector('.sheet > .go');
+    var barra = document.getElementById('bar');
+    if (!alvo || !barra || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {{
+      barra.classList.toggle('on', !e[0].isIntersecting);
+    }}).observe(alvo);
+  }})();
+</script>
 </body>
 </html>
 """

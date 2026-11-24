@@ -110,7 +110,7 @@ a:focus-visible {
 .spec div:last-child { border-bottom: 0; }
 
 .spec dt {
-  color: var(--ink-3);
+  color: var(--ink-2);
   font-weight: 500;
 }
 
@@ -152,8 +152,7 @@ li::before {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.55;
+  background: var(--ink-3);
 }
 
 /* ---------- perguntas ---------- */
@@ -234,6 +233,10 @@ footer a { color: var(--ink-2); }
 
 .bar {
   position: fixed;
+  opacity: 0;
+  transform: translateY(100%);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
   left: 0;
   right: 0;
   bottom: 0;
@@ -249,6 +252,12 @@ footer a { color: var(--ink-2); }
   display: block;
   text-align: center;
   padding: 0.92rem 1rem;
+}
+
+.bar.on {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
 }
 
 @media (max-width: 640px) {

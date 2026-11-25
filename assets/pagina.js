@@ -102,3 +102,59 @@
   sheet.querySelectorAll(':scope > .spec, :scope > section, :scope > .guarantee, :scope > .flag, :scope > .close')
     .forEach(function (el) { el.classList.add('rv'); io.observe(el); });
 })();
+
+/* v5 — ilustracoes animadas: formas flutuando na faixa de cor, brilhos e
+   halo na imagem, icones animados no "Como funciona", entrada em cascata
+   e barra de progresso de leitura. */
+(function () {
+  var d = document;
+  var sheet = d.querySelector('.sheet');
+  if (!sheet) return;
+
+  var deco = d.createElement('div');
+  deco.className = 'deco';
+  deco.setAttribute('aria-hidden', 'true');
+  deco.innerHTML = '<i class="b b1"></i><i class="b b2"></i><i class="b b3"></i>' +
+    '<i class="s s1">✦</i><i class="s s2">✦</i><i class="s s3">✦</i><i class="s s4">✦</i>';
+  d.body.insertBefore(deco, d.body.firstChild);
+
+  var media = sheet.querySelector('.intro-media');
+  if (media) {
+    var sp = d.createElement('span');
+    sp.className = 'spark';
+    sp.setAttribute('aria-hidden', 'true');
+    sp.innerHTML = '<i>✦</i><i>✦</i><i>✦</i>';
+    media.appendChild(sp);
+  }
+
+  var a = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+  var icons = [
+    '<svg ' + a + '><circle class="r" cx="9" cy="9" r="4"/><path class="p" d="M9 9l5 12 1.8-5.2L21 14z"/></svg>',
+    '<svg ' + a + '><g class="c"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></g></svg>',
+    '<svg ' + a + '><g class="m"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></g></svg>'
+  ];
+  sheet.querySelectorAll('.steps li').forEach(function (li, i) {
+    var b = li.querySelector('b');
+    if (!b || !icons[i]) return;
+    var n = b.textContent;
+    b.className = 'ico ico' + (i + 1);
+    b.innerHTML = icons[i] + '<em>' + n + '</em>';
+  });
+
+  sheet.querySelectorAll('section ul, .steps ol, .spec').forEach(function (list) {
+    Array.prototype.forEach.call(list.children, function (c, i) { c.style.setProperty('--i', i); });
+  });
+
+  var top = d.querySelector('.top');
+  if (top) {
+    var pr = d.createElement('div');
+    pr.className = 'progress';
+    top.appendChild(pr);
+    var upd = function () {
+      var h = d.documentElement.scrollHeight - window.innerHeight;
+      pr.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+    };
+    window.addEventListener('scroll', upd, { passive: true });
+    upd();
+  }
+})();

@@ -347,3 +347,235 @@ footer a { color: var(--ink-2); }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+
+/* ===================================================================
+   v2 — visual de página de vendas (cabeçalho, imagem, selos, garantia)
+   Sobrepõe as regras acima; o conteúdo continua o mesmo.
+   =================================================================== */
+
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --ok: #138a4c;
+  --cta: #16a34a;
+  --line: #e6e8ec;
+  --soft: #f7f9fb;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--sans);
+  font-size: 16.5px;
+}
+
+h1, h2 { font-family: var(--sans); }
+
+/* cabeçalho */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.top-in {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: .75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: .84rem;
+}
+.brand { font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
+.brand::before {
+  content: "";
+  display: inline-block;
+  width: .72rem; height: .72rem;
+  margin-right: .5rem;
+  border-radius: 3px;
+  background: var(--accent);
+  vertical-align: -1px;
+}
+.secure { color: var(--ok); font-weight: 600; white-space: nowrap; }
+.secure::before { content: "\1F512\00A0"; }
+
+/* cartão central */
+.sheet {
+  max-width: 46rem;
+  margin: 1.75rem auto 0;
+  padding: 2.6rem 2.4rem 3rem;
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.05), 0 10px 30px rgba(16,24,40,.07);
+}
+
+h1 {
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+.lead { font-size: 1.1rem; color: var(--ink-2); }
+
+/* imagem do produto */
+.hero {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto 1.8rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(16,24,40,.16);
+}
+
+/* botão de compra */
+.go {
+  display: block;
+  text-align: center;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  padding: 1.1rem 1.4rem;
+  border-radius: 12px;
+  background: var(--cta);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(22,163,74,.32);
+  transition: transform .12s ease, filter .12s ease;
+}
+.go::after { content: "\00A0\2192"; }
+.go:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.under-go { text-align: center; }
+
+/* selos de confiança */
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin: 1.1rem 0 0;
+}
+.trust li {
+  margin: 0;
+  padding: .38rem .8rem;
+  background: #eef7f1;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #1f4a33;
+}
+.trust li::before {
+  content: "\2713";
+  position: static;
+  display: inline;
+  width: auto; height: auto;
+  margin-right: .35rem;
+  background: none;
+  color: var(--ok);
+}
+
+/* ficha com o preço */
+.spec {
+  margin-top: 2.4rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  border-radius: 14px;
+}
+.spec div:first-child dd {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+.spec-note { padding-left: .2rem; }
+
+/* listas com check */
+h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -.015em;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+section li { padding-left: 1.7rem; }
+section li::before {
+  content: "\2713";
+  top: 0;
+  width: 1.15rem; height: 1.15rem;
+  border-radius: 50%;
+  background: #e5f4ea;
+  color: var(--ok);
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1.15rem;
+  text-align: center;
+  margin-top: .22rem;
+}
+
+/* perguntas em cartões */
+details {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 1rem;
+  margin-bottom: .6rem;
+  background: #fff;
+}
+summary { font-weight: 600; font-size: .98rem; }
+summary::after { right: .1rem; }
+
+/* garantia */
+.guarantee {
+  margin-top: 2.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.25rem 1.3rem;
+  background: #f2faf5;
+  border: 2px dashed #bfe3cd;
+  border-radius: 14px;
+  font-size: .93rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.guarantee .seal {
+  flex: 0 0 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: var(--ok);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.guarantee .seal small { font-size: .58rem; font-weight: 700; letter-spacing: .04em; margin-top: .15rem; }
+.guarantee strong { display: block; color: var(--ink); font-size: 1.02rem; margin-bottom: .15rem; }
+
+/* fecho */
+.close {
+  margin-top: 2.8rem;
+  padding: 1.8rem 1.4rem;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-align: center;
+}
+footer { text-align: center; }
+
+.bar { background: rgba(255,255,255,.97); }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .top-in { font-size: .76rem; padding: .65rem 1rem; }
+  .sheet { margin: 0; border-radius: 0; box-shadow: none; padding: 1.8rem 1.15rem 6rem; }
+  h1 { font-size: 1.7rem; }
+  .guarantee { flex-direction: column; text-align: center; }
+}

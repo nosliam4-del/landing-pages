@@ -44,6 +44,33 @@ PRECOS = {
     "slim30": None,
 }
 
+# Visual de pagina de vendas (v2): imagem oficial do produto (og:image do
+# checkout da Kiwify) e o nome curto que aparece no cabecalho. Sem imagem,
+# a pagina sai sem o bloco da imagem.
+IMAGENS = {
+    "caderno-trt": "https://aws-assets.kiwify.com.br/EO6lVxCg2iQL7Yq/TRT-300-x-250-px_9350951473e042949afa67dd75ef1d2d.jpg",
+    "pintura-residencial": "https://aws-assets.kiwify.com.br/TVpuz6MqRkjWv1v/Curso-de-Pintor-1_a27c24bb20b14385856c6fad5f67a70e.png",
+    "acessorios": "https://aws-assets.kiwify.com.br/czKfWScs36a7Aet/IMG_0788_c867f66484ab42d5808ce77d08aa7e8a.png",
+    "ebook-herois-biblia": "https://aws-assets.kiwify.com.br/osJxMrzrJjcETVs/capa-herois-da-biblia_b5cd811c619a5324387485fc0f0350b5.jpg",
+}
+
+MARCAS = {
+    "caderno-trt": "Concursos TRT",
+    "pintura-residencial": "Curso de Pintura",
+    "acessorios": "Revenda de Acess\u00f3rios",
+    "ebook-herois-biblia": "Hist\u00f3rias da B\u00edblia em V\u00eddeos",
+}
+
+# Produtos proprios: sem o aviso de link de afiliado no rodape.
+PROPRIOS = {"ebook-herois-biblia"}
+
+TRUST = ('  <ul class="trust"><li>Pagamento seguro pela Kiwify</li>'
+         '<li>Acesso liberado ap\u00f3s o pagamento</li><li>Garantia de 7 dias</li></ul>\n')
+
+GARANTIA = ('\n  <div class="guarantee"><div class="seal">7<small>DIAS</small></div><div>'
+            '<strong>Garantia de 7 dias</strong>Se n\u00e3o gostar, voc\u00ea pode pedir o reembolso '
+            'pela Kiwify em at\u00e9 7 dias ap\u00f3s a compra.</div></div>\n')
+
 TPL = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -87,18 +114,18 @@ TPL = """<!DOCTYPE html>
 </script>
 </head>
 <body>
-<div class="sheet">
+{header}<div class="sheet">
   <h1>{h1}</h1>
   <p class="lead">{lead}</p>
-
+{hero}
   <a class="go" href="{link}" rel="nofollow sponsored" onclick="return gtag_report_conversion(this.href);">{cta}</a>
   <p class="under-go">{undergo}</p>
-
+{trust}
   <dl class="spec">
 {spec}
   </dl>
 {specnote}
-{flag}{sections}
+{flag}{sections}{guarantee}
   <section>
     <h2>Perguntas frequentes</h2>
 {faq}
@@ -110,9 +137,7 @@ TPL = """<!DOCTYPE html>
   </div>
 
   <footer>
-    Esta página contém link de afiliado. Ao comprar por aqui, você paga o mesmo valor
-    e podemos receber uma comissão pela indicação. Pagamento processado com segurança
-    pela Kiwify.<br>
+    {footer_note}<br>
     <a href="privacidade.html">Política de Privacidade</a>
   </footer>
 </div>
@@ -208,6 +233,18 @@ def render(slug, p):
         faq=faq,
         closing=p["closing"],
         cssv=CSSV,
+        header=('<header class="top"><div class="top-in"><span class="brand">{}</span>'
+                '<span class="secure">Compra segura</span></div></header>\n').format(
+                    MARCAS.get(slug, p["title"].split(" \u2014 ")[0].strip())),
+        hero=('\n  <img class="hero" src="{}" alt="{}" width="600" height="500" loading="eager">\n'.format(
+            IMAGENS[slug], esc_attr(p["h1"])) if slug in IMAGENS else ""),
+        trust=TRUST,
+        guarantee=GARANTIA,
+        footer_note=("Produto digital pr\u00f3prio. Pagamento processado com seguran\u00e7a pela Kiwify."
+                     if slug in PROPRIOS else
+                     "Esta p\u00e1gina cont\u00e9m link de afiliado. Ao comprar por aqui, voc\u00ea paga o mesmo valor\n"
+                     "    e podemos receber uma comiss\u00e3o pela indica\u00e7\u00e3o. Pagamento processado com seguran\u00e7a\n"
+                     "    pela Kiwify."),
     )
     io.open(slug + ".html", "w", encoding="utf-8").write(html)
     return len(html)

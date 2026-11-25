@@ -425,7 +425,7 @@ h1 {
 .hero {
   display: block;
   width: 100%;
-  max-width: 480px;
+  max-width: 400px;
   height: auto;
   margin: 0 auto 1.8rem;
   border-radius: 14px;
@@ -543,7 +543,8 @@ summary::after { right: .1rem; }
   color: var(--ink-2);
 }
 .guarantee .seal {
-  flex: 0 0 4.4rem;
+  flex: none;
+  width: 4.4rem;
   height: 4.4rem;
   border-radius: 50%;
   background: var(--ok);
